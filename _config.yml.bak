@@ -42,7 +42,10 @@ jekyll-archives:
 
 # Disqus comments
 # disqus_shortname: bencentra
-
+comments :
+     provider : duoshuo
+     duoshuo : 
+     short_name : sushao
 # Google analytics
 # ga_tracking_id: "UA-XXXX-1"
 
