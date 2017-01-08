@@ -7,67 +7,47 @@ tags:	http
 cover:  "/assets/http-11657736.jpg"
 ---
 
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+该http系列文章主要参考自《http权威指南》,有些知识会根据平时项目中遇到的问题来详细讲解。
 
-## Adding New Posts
+## 浏览器和服务器的通信过程
+浏览器和服务器之间是通过http协议进行交互的，如图：
+<img src='//pengshaosu.github.io/blog/assets/request-response.png' title=''>
+## web资源
+  所有放在web服务器上的对象都称为web资源
+## url：统一资源定位符
+  url唯一标示一个web资源在万维网上的位置
+ <img src='//pengshaosu.github.io/blog/assets/url.png'>
+## http方法
+http支持几种不同的请求命令，这些命令被称为http方法。每条http请求报文都包含一个方法。
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+五种常见的http方法：
+  <img src="//pengshaosu.github.io/blog/assets/http-method.png" title="http method">
 
-### Tags and Categories
+## 报文
+  报文即是在客户端和服务器之间要传递的信息。
 
-If you list one or more categories or tags in the front matter of your post, they will be included with the post on the page as links. Clicking the link will bring you to an auto-generated archive page for the category or tag, created using the [jekyll-archive][jekyll-archive] gem.
+  http报文包括请求报文和响应报文，报文是纯文本
+  <img src='//pengshaosu.github.io/blog/assets/paragram.png'>
+  <img src="//pengshaosu.github.io/blog/assets/paragram-def.png">
+  一个请求及响应过程的报文:
+  <img src='//pengshaosu.github.io/blog/assets/paragram-detail.png'/>
+## 浏览器发出一个请求后经历的过程
+ <img src='//pengshaosu.github.io/blog/assets/process.png'>
 
-### Cover Images
 
-To add a cover image to your post, set the "cover" property in the front matter with the relative URL of the image (i.e. <code>cover: "/assets/cover_image.jpg"</code>).
+## Web的结构组件
+  本章主要介绍了2个web应用(浏览器和服务器)之间的交互，在因特网上要与很多web应用程序交互
+  
+  以下列出比较中重要的web应用程序
+  <img src='//pengshaosu.github.io/blog/assets/web-application.png'>
 
-### Code Snippets
 
-You can use [highlight.js][highlight] to add syntax highlight code snippets:
-
-Use the [Liquid][liquid] `{% raw %}{% highlight <language> %}{% endraw %}` tag to add syntax highlighting to code snippets.
-
-For instance, this template...
-{% highlight html %}
-{% raw %}{% highlight javascript %}    
-function demo(string, times) {    
-  for (var i = 0; i < times; i++) {    
-    console.log(string);    
-  }    
-}    
-demo("hello, world!", 10);
-{% endhighlight %}{% endraw %}
-{% endhighlight %}
-
-...will come out looking like this:
-
-{% highlight javascript %}
-function demo(string, times) {
-  for (var i = 0; i < times; i++) {
-    console.log(string);
-  }
-}
-demo("hello, world!", 10);
-{% endhighlight %}
-
-Syntax highlighting is done using [highlight.js][highlight]. You can change the active theme in [head.html](https://github.com/bencentra/centrarium/blob/2dcd73d09e104c3798202b0e14c1db9fa6e77bc7/_includes/head.html#L15).
-
-### Images
-
-Lightbox has been enabled for images. To create the link that'll launch the lightbox, add <code>data-lightbox</code> and <code>data-title</code> attributes to an <code>&lt;a&gt;</code> tag around your <code>&lt;img&gt;</code> tag. The result is:
-
+## 结语
+ 
 <a href="//bencentra.com/assets/images/falcon9_large.jpg" data-lightbox="falcon9-large" data-title="Check out the Falcon 9 from SpaceX">
   <img src="//bencentra.com/assets/images/falcon9_small.jpg" title="Check out the Falcon 9 from SpaceX">
 </a>
+ 本话简单介绍了浏览器和服务器的交互过程，以及涉及的一些概念，后续会更加深入的了解以上知识。
 
-For more information, check out the [Lightbox][lightbox] website.
 
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
 
-[jekyll]:      http://jekyllrb.com
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-help]: https://github.com/jekyll/jekyll-help
-[highlight]:   https://highlightjs.org/
-[lightbox]:    http://lokeshdhakar.com/projects/lightbox2/
-[jekyll-archive]: https://github.com/jekyll/jekyll-archives
-[liquid]: https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
